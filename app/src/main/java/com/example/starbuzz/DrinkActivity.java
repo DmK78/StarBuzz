@@ -10,18 +10,23 @@ public class DrinkActivity extends AppCompatActivity {
     TextView textViewName;
     TextView textViewDescription;
     ImageView imageView;
+    public static final String EXTRA_DRINKID = "drinkId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drink);
-        textViewName=findViewById(R.id.textViewName);
-        textViewDescription=findViewById(R.id.textViewDescription);
-        imageView=findViewById(R.id.imageViewDrinkIMG);
-        Intent intent=getIntent();
-        String name = intent.getStringExtra("name");
-        String description = intent.getStringExtra("description");
-        int imageSrc=intent.getIntExtra("imageSrc",0);
+        textViewName = findViewById(R.id.textViewName);
+        textViewDescription = findViewById(R.id.textViewDescription);
+        imageView = findViewById(R.id.imageViewDrinkIMG);
+        //Intent intent = getIntent();
+        int drinkId = (Integer) getIntent().getExtras().get(EXTRA_DRINKID);
+        Drink drink = Drink.drinks[drinkId];
+
+
+        String name = drink.getName();
+        String description = drink.getDescription();
+        int imageSrc = drink.getImageResourceId();
         textViewName.setText(name);
         textViewDescription.setText(description);
         imageView.setImageResource(imageSrc);

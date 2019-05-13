@@ -9,8 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import static com.example.starbuzz.DrinkActivity.EXTRA_DRINKID;
+
 public class DrinksActivitu extends AppCompatActivity {
     ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +29,12 @@ public class DrinksActivitu extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Drink drink= Drink.drinks[position];
+                //Drink drink= Drink.drinks[position];
                 Intent intent = new Intent(getApplicationContext(),DrinkActivity.class);
-                intent.putExtra("name",drink.getName());
+                intent.putExtra(EXTRA_DRINKID, (int) id);
+                /*intent.putExtra("name",drink.getName());
                 intent.putExtra("description", drink.getDescription());
-                intent.putExtra("imageSrc",drink.getImageResourceId());
+                intent.putExtra("imageSrc",drink.getImageResourceId());*/
                 startActivity(intent);
 
             }
