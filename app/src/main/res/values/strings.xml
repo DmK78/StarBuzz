@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">StarBuzz</string>
+    <string name="starbuzz_logo">Starbuzz logo</string>
+    <string name="textviewDrinkName">TextView</string>
+    <string name="textviewDescroption">TextView</string>
+    <string name="imageofdrink">imageOfDrink</string>
+
+
+
+    <string-array name="main_menu">
+        <item>Drinks</item>
+        <item>Dishes</item>
+        <item>Contacts</item>
+
+
+    </string-array>
+
+
+</resources>
